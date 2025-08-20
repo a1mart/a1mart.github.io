@@ -1,11 +1,801 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Title & SEO -->
+    <title>Aidan Martin — Software Engineer</title>
+    <meta name="description" content="Portfolio and resume of Aidan Martin, Software Engineer. Explore projects, skills, and experience." />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
+    
+    <!-- Open Graph (LinkedIn, Slack, etc.) -->
+    <meta property="og:title" content="Aidan Martin — Software Engineer" />
+    <meta property="og:description" content="Portfolio and resume of Aidan Martin, Software Engineer. Explore projects, skills, and experience." />
+    <meta property="og:image" content="assets/profile.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://a1mart.github.io" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --accent: #06b6d4;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-opacity="0.1" stroke-width="1"/></pattern></defs><rect width="100" height="20" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .summary {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--surface);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card .meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .card .description {
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--surface);
+            color: var(--text);
+            padding: 0.375rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .project {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .award {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .award:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .award h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .award-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .award-link:hover {
+            text-decoration: underline;
+        }
+
+        .languages-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .language-proficiency {
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            text-transform: capitalize;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+        }
+
+        .error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        footer {
+            background: var(--text);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Hello world, I'm Aidan</h1>
-  <p>Welcome to my portfolio site!</p>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="name">Loading...</h1>
+                <p class="subtitle" id="title">Data Scientist & Software Engineer</p>
+                <p class="summary" id="summary">Loading...</p>
+                <div class="contact-links" id="contact-links">
+                    <!-- Contact links will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div id="experience-container" class="loading">Loading experience...</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid" id="skills-container">
+                <div class="loading">Loading skills...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div id="projects-container" class="loading">Loading projects...</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="cards-grid" id="education-container">
+                <div class="loading">Loading education...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-grid" id="awards-container">
+                <div class="loading">Loading awards...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aidan Martin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Configuration - change this to load from external JSON file
+        const CONFIG = {
+            loadFromFile: true, // Set to false to use embedded data
+            jsonPath: './assets/resume.json' // Path to your JSON file
+        };
+
+        // Fallback resume data (embedded in JavaScript as backup)
+        const fallbackResumeData = {
+            "personal": {
+                "name": "Aidan Martin",
+                "degree": "MSCS",
+                "title": "Data Scientist",
+                "summary": "Skilled communicator with a proven ability to bridge the gap between business and technology. Adept at engaging with stakeholders to understand their needs and translating them into actionable solutions. Proficient in leveraging machine expertise and data analysis to derive meaningful insights and make informed, data-driven decisions. Recognized for efficient problem-solving and delivering impactful outcomes.",
+                "contact": {
+                    "address": "Charleston, SC 29455",
+                    "email": "aidan3martin@gmail.com",
+                    "github": "https://github.com/a1mart/"
+                }
+            },
+            "experience": [
+                {
+                    "company": "Clifton Larson Allen",
+                    "location": "Remote",
+                    "position": "Data Scientist",
+                    "period": "2023 - PRESENT",
+                    "description": "Designed and implemented data extraction workflows and machine learning models for diverse client projects. Developed and optimized integration and deployment pipelines, ensuring seamless operation of machine learning systems. Introduced and deployed Kubernetes and Terraform for scalable and automated infrastructure management. Delivered client solutions, including Azure Kubernetes Service (AKS) deployments and machine learning applications in distributed systems. Built and maintained APIs to support robust machine learning and data integration services."
+                },
+                {
+                    "company": "Florida State University",
+                    "location": "Tallahassee, FL",
+                    "position": "Teaching Assistant",
+                    "period": "2021 - 2022",
+                    "description": "Evaluated undergraduate assignments, research papers, and exams. Held office hours for students and suggested improvements to course content."
+                },
+                {
+                    "company": "Celtic Cottage Pub and Patio Bar",
+                    "location": "Long Branch, NJ",
+                    "position": "Bartender",
+                    "period": "2016 - 2022",
+                    "description": "Managed multiple roles as a bartender, waiter, and cook, serving large crowds of over 100 patrons. Boosted sales by 25% through targeted marketing strategies, menu enhancements, and improved customer service. Implemented and configured a Point-of-Sale system, automating monthly reporting and improving operational efficiency."
+                }
+            ],
+            "education": [
+                {
+                    "institution": "Florida State University",
+                    "location": "Tallahassee, FL",
+                    "degree": "Masters of Science, Computer Science",
+                    "period": "2021 - 2022",
+                    "gpa": "3.3",
+                    "courses": [
+                        "Advanced Data Mining",
+                        "Data Science",
+                        "Database Systems",
+                        "Cryptography",
+                        "Network Security: Active and Passive Defenses",
+                        "Computer and Network Administration",
+                        "Data and Computer Communications",
+                        "Advanced Operating Systems",
+                        "Theory of Automata and Formal Languages"
+                    ]
+                },
+                {
+                    "institution": "Florida State University",
+                    "location": "Tallahassee, FL",
+                    "degree": "Bachelors of Science, Computer Science",
+                    "period": "2017 - 2021",
+                    "gpa": "3.3",
+                    "courses": [
+                        "Algorithms and Data Structures",
+                        "Artificial Intelligence",
+                        "Software Engineering",
+                        "Operating Systems",
+                        "Theory of Computation",
+                        "Programming Languages",
+                        "Object-Oriented Programming",
+                        "Parallel and Distributed Programming",
+                        "Computer Architecture",
+                        "Discrete Mathematics"
+                    ]
+                }
+            ],
+            "skills": {
+                "Programming & Software Development": [
+                    "Golang",
+                    "Python",
+                    "C/C++",
+                    "Rust",
+                    "JavaScript",
+                    "TypeScript",
+                    "React",
+                    "Git",
+                    "Automated Testing (Unit & Integration)"
+                ],
+                "Data Science & Analytics": [
+                    "SQL",
+                    "NoSQL",
+                    "Spark",
+                    "Hadoop",
+                    "Kafka",
+                    "RabbitMQ",
+                    "Machine Learning",
+                    "Visualization (PowerBI, Tableau)",
+                    "Prompt Engineering"
+                ],
+                "Cloud, DevOps & Infrastructure": [
+                    "Kubernetes",
+                    "Docker",
+                    "Terraform",
+                    "AWS",
+                    "Azure",
+                    "GCP",
+                    "CI/CD",
+                    "Server Management"
+                ],
+                "Systems, Networking & Architecture": [
+                    "APIs & Integrations",
+                    "Routing",
+                    "Distributed Systems",
+                    "Solution Architecture"
+                ]
+            },
+            "awards": [
+            {
+                "title": "Academic Honors",
+                "description": "Dean's List; FSU Vires Scholarship (academic merit-based out-of-state tuition waiver)"
+            },
+            {
+                "title": "Scholarship Recognition",
+                "description": "New Jersey State Golf Association Caddie Scholar – awarded for academic performance and leadership",
+                "link": "https://njsga.org/news/post/caddie-scholarship-success-story-spring-lakes-aidan-martin"
+            },
+            {
+                "title": "Leadership & Service",
+                "description": "Phi Gamma Delta Fundraising Award – recognized for excellence in philanthropic fundraising supporting UF Health Shands Children's Hospital"
+            }
+            ],
+            "languages": [
+                {
+                    "language": "English",
+                    "proficiency": "native"
+                },
+                {
+                    "language": "Spanish",
+                    "proficiency": "proficient"
+                }
+            ],
+            "projects": [
+                {
+                    "title": "Invoice Management System/AutoExtract",
+                    "technologies": [
+                        "Python",
+                        "FastAPI",
+                        "PostgreSQL",
+                        "Docker",
+                        "Kubernetes",
+                        "Terraform"
+                    ],
+                    "description": "Developed a comprehensive system for invoice and document management with automated data extraction and processing. Implemented scalable deployment pipelines leveraging Azure Pipelines, Kubernetes and Terraform."
+                },
+                {
+                    "title": "Workflow Engine",
+                    "technologies": [
+                        "Golang",
+                        "PostgreSQL",
+                        "Docker",
+                        "Kubernetes"
+                    ],
+                    "description": "Built a concurrency-focused workflow engine inspired by Huginn, designed for robust and efficient task automation. Builds on the theme of AI Agents and the Actor Model to accommodate complex scenarios."
+                },
+                {
+                    "title": "Emergency Medical Service (EMS) Dispatch and Deployment",
+                    "technologies": [
+                        "Python",
+                        "SQL",
+                        "Docker",
+                        "SymPy",
+                        "Open Source Routing Machine (OSRM)"
+                    ],
+                    "description": "Created a simulator to evaluate reinforcement learning policies, resource distributions, and infrastructure locations. Developed a generalized environment for shortest-path routing to real-world locations using GPS coordinates."
+                },
+                {
+                    "title": "Stock Market Prediction and Financial Analysis",
+                    "technologies": [
+                        "Python",
+                        "Charts.js"
+                    ],
+                    "description": "Aggregated and preprocessed real-time market data from multiple sources; computed technical indicators. Conducted backtesting using reinforcement learning agents and deep learning models. Designed an interactive dashboard for equity analysis with visualizations and key metrics."
+                },
+                {
+                    "title": "E-Commerce Web Application",
+                    "technologies": [
+                        "Python",
+                        "Flask",
+                        "SQL",
+                        "Typescript React",
+                        "Docker",
+                        "Paypal API",
+                        "Printful API"
+                    ],
+                    "description": "Built a custom web application enabling users to design personalized web pages with embedded content and merchandise. Worked with clients to build solutions that fit their business needs; integrated third-party APIs for payment processing and product fulfillment to streamline business operations."
+                }
+            ]
+        };
+
+        // Function to load JSON data from external file
+        async function loadResumeData() {
+            if (!CONFIG.loadFromFile) {
+                return fallbackResumeData;
+            }
+
+            try {
+                const response = await fetch(CONFIG.jsonPath);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${CONFIG.jsonPath}: ${response.statusText}`);
+                }
+                const data = await response.json();
+                console.log('Successfully loaded resume data from file');
+                return data;
+            } catch (error) {
+                console.warn('Failed to load external JSON file, using fallback data:', error);
+                showError(`Could not load ${CONFIG.jsonPath}. Using embedded data instead.`);
+                return fallbackResumeData;
+            }
+        }
+
+        // Function to show error messages
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = message;
+            document.body.insertBefore(errorDiv, document.body.firstChild);
+            
+            // Remove error after 5 seconds
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+
+        // Function to populate the page with data
+        function populatePortfolio(resumeData) {
+            try {
+                // Populate hero section
+                document.getElementById('name').textContent = resumeData.personal.name + ' ' + resumeData.personal.degree;
+                document.getElementById('summary').textContent = resumeData.personal.summary;
+
+                // Populate contact links
+                const contactContainer = document.getElementById('contact-links');
+                contactContainer.innerHTML = `
+                    <a href="mailto:${resumeData.personal.contact.email}" class="contact-link">
+                        📧 Email
+                    </a>
+                    <a href="${resumeData.personal.contact.github}" class="contact-link" target="_blank" rel="noopener">
+                        💻 GitHub
+                    </a>
+                `;
+
+                // Populate experience
+                const experienceContainer = document.getElementById('experience-container');
+                experienceContainer.innerHTML = resumeData.experience.map(exp => `
+                    <div class="card">
+                        <h3>${exp.position}</h3>
+                        <div class="meta">${exp.company} • ${exp.location} • ${exp.period}</div>
+                        <div class="description">${exp.description}</div>
+                    </div>
+                `).join('');
+
+                // Populate skills
+                const skillsContainer = document.getElementById('skills-container');
+                skillsContainer.innerHTML = Object.entries(resumeData.skills).map(([category, skills]) => `
+                    <div class="skill-category">
+                        <h3>${category}</h3>
+                        <div class="skill-tags">
+                            ${skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                `).join('');
+
+                // Populate projects
+                const projectsContainer = document.getElementById('projects-container');
+                projectsContainer.innerHTML = resumeData.projects.map(project => `
+                    <div class="project">
+                        <h3>${project.title}</h3>
+                        <div class="tech-stack">
+                            ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        </div>
+                        <div class="description">${project.description}</div>
+                    </div>
+                `).join('');
+
+                // Populate education
+                const educationContainer = document.getElementById('education-container');
+                educationContainer.innerHTML = resumeData.education.map(edu => `
+                    <div class="card">
+                        <h3>${edu.degree}</h3>
+                        <div class="meta">${edu.institution} • ${edu.location} • ${edu.period} • GPA: ${edu.gpa}</div>
+                        <div class="description">
+                            <strong>Relevant Courses:</strong> ${edu.courses.join(', ')}
+                        </div>
+                    </div>
+                `).join('');
+
+                // Populate awards
+                const awardsContainer = document.getElementById('awards-container');
+                awardsContainer.innerHTML = resumeData.awards.map(award => `
+                    <div class="award">
+                        <h3>${award.title}</h3>
+                        <p>${award.description}${award.link ? ` <a href="${award.link}" class="award-link" target="_blank" rel="noopener">→</a>` : ''}</p>
+                    </div>
+                `).join('');
+
+                // Populate languages
+                const languagesContainer = document.getElementById('languages-container');
+                languagesContainer.innerHTML = resumeData.languages.map(lang => `
+                    <div class="language-item">
+                        <span class="language-name">${lang.language}</span>
+                        <span class="language-proficiency">${lang.proficiency}</span>
+                    </div>
+                `).join('');
+
+                console.log('Portfolio populated successfully');
+            } catch (error) {
+                console.error('Error populating portfolio:', error);
+                showError('Error displaying portfolio data. Please check the console for details.');
+            }
+        }
+
+        // Initialize the portfolio when the page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const resumeData = await loadResumeData();
+                populatePortfolio(resumeData);
+            } catch (error) {
+                console.error('Critical error initializing portfolio:', error);
+                showError('Failed to initialize portfolio. Please refresh the page.');
+            }
+        });
+
+        // Add smooth scrolling for better UX (optional)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

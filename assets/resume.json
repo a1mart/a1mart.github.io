@@ -1,0 +1,197 @@
+{
+    "personal": {
+      "name": "Aidan Martin",
+      "degree": "MSCS",
+      "title": "Data Scientist",
+      "summary": "Skilled communicator with a proven ability to bridge the gap between business and technology. Adept at engaging with stakeholders to understand their needs and translating them into actionable solutions. Proficient in leveraging machine expertise and data analysis to derive meaningful insights and make informed, data-driven decisions. Recognized for efficient problem-solving and delivering impactful outcomes.",
+      "contact": {
+        "address": "Charleston, SC 29455",
+        "phone": "",
+        "email": "aidan3martin@gmail.com",
+        "github": "https://github.com/a1mart/"
+      }
+    },
+    "experience": [
+      {
+        "company": "Clifton Larson Allen",
+        "location": "Remote",
+        "position": "Data Scientist",
+        "period": "2023 - PRESENT",
+        "description": "Designed and implemented data extraction workflows and machine learning models for diverse client projects. Developed and optimized integration and deployment pipelines, ensuring seamless operation of machine learning systems. Introduced and deployed Kubernetes and Terraform for scalable and automated infrastructure management. Delivered client solutions, including Azure Kubernetes Service (AKS) deployments and machine learning applications in distributed systems. Built and maintained APIs to support robust machine learning and data integration services."
+      },
+      {
+        "company": "Florida State University",
+        "location": "Tallahassee, FL",
+        "position": "Teaching Assistant",
+        "period": "2021 - 2022",
+        "description": "Evaluated undergraduate assignments, research papers, and exams. Held office hours for students and suggested improvements to course content."
+      },
+      {
+        "company": "Celtic Cottage Pub and Patio Bar",
+        "location": "Long Branch, NJ",
+        "position": "Bartender",
+        "period": "2016 - 2022",
+        "description": "Managed multiple roles as a bartender, waiter, and cook, serving large crowds of over 100 patrons. Boosted sales by 25% through targeted marketing strategies, menu enhancements, and improved customer service. Implemented and configured a Point-of-Sale system, automating monthly reporting and improving operational efficiency."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Florida State University",
+        "location": "Tallahassee, FL",
+        "degree": "Masters of Science, Computer Science",
+        "period": "2021 - 2022",
+        "gpa": "3.3",
+        "courses": [
+          "Advanced Data Mining",
+          "Data Science",
+          "Database Systems",
+          "Cryptography",
+          "Network Security: Active and Passive Defenses",
+          "Computer and Network Administration",
+          "Data and Computer Communications",
+          "Advanced Operating Systems",
+          "Theory of Automata and Formal Languages"
+        ]
+      },
+      {
+        "institution": "Florida State University",
+        "location": "Tallahassee, FL",
+        "degree": "Bachelors of Science, Computer Science",
+        "period": "2017 - 2021",
+        "gpa": "3.3",
+        "courses": [
+          "Algorithms and Data Structures",
+          "Artificial Intelligence",
+          "Software Engineering",
+          "Operating Systems",
+          "Theory of Computation",
+          "Programming Languages",
+          "Object-Oriented Programming",
+          "Parallel and Distributed Programming",
+          "Computer Architecture",
+          "Discrete Mathematics"
+        ]
+      }
+    ],
+    "skills": {
+      "Programming & Software Development": [
+        "Golang",
+        "Python",
+        "C/C++",
+        "Rust",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Git",
+        "Automated Testing (Unit & Integration)"
+      ],
+      "Data Science & Analytics": [
+        "SQL",
+        "NoSQL",
+        "Spark",
+        "Hadoop",
+        "Kafka",
+        "RabbitMQ",
+        "Machine Learning",
+        "Visualization (PowerBI, Tableau)",
+        "Prompt Engineering"
+      ],
+      "Cloud, DevOps & Infrastructure": [
+        "Kubernetes",
+        "Docker",
+        "Terraform",
+        "AWS",
+        "Azure",
+        "GCP",
+        "CI/CD",
+        "Server Management"
+      ],
+      "Systems, Networking & Architecture": [
+        "APIs & Integrations",
+        "Routing",
+        "Distributed Systems",
+        "Solution Architecture"
+      ]
+    },
+    "awards": [
+      {
+        "title": "Academic Honors",
+        "description": "Dean's List; FSU Vires Scholarship (academic merit-based out-of-state tuition waiver)"
+      },
+      {
+        "title": "Scholarship Recognition",
+        "description": "New Jersey State Golf Association Caddie Scholar – awarded for academic performance and leadership",
+        "link": "https://njsga.org/news/post/caddie-scholarship-success-story-spring-lakes-aidan-martin"
+      },
+      {
+        "title": "Leadership & Service",
+        "description": "Phi Gamma Delta Fundraising Award – recognized for excellence in philanthropic fundraising supporting UF Health Shands Children's Hospital"
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "native"
+      },
+      {
+        "language": "Spanish",
+        "proficiency": "proficient"
+      }
+    ],
+    "projects": [
+      {
+        "title": "Invoice Management System/AutoExtract",
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker",
+          "Kubernetes",
+          "Terraform"
+        ],
+        "description": "Developed a comprehensive system for invoice and document management with automated data extraction and processing. Implemented scalable deployment pipelines leveraging Azure Pipelines, Kubernetes and Terraform."
+      },
+      {
+        "title": "Workflow Engine",
+        "technologies": [
+          "Golang",
+          "PostgreSQL",
+          "Docker",
+          "Kubernetes"
+        ],
+        "description": "Built a concurrency-focused workflow engine inspired by Huginn, designed for robust and efficient task automation. Builds on the theme of AI Agents and the Actor Model to accommodate complex scenarios."
+      },
+      {
+        "title": "Emergency Medical Service (EMS) Dispatch and Deployment",
+        "technologies": [
+          "Python",
+          "SQL",
+          "Docker",
+          "SymPy",
+          "Open Source Routing Machine (OSRM)"
+        ],
+        "description": "Created a simulator to evaluate reinforcement learning policies, resource distributions, and infrastructure locations. Developed a generalized environment for shortest-path routing to real-world locations using GPS coordinates."
+      },
+      {
+        "title": "Stock Market Prediction and Financial Analysis",
+        "technologies": [
+          "Python",
+          "Charts.js"
+        ],
+        "description": "Aggregated and preprocessed real-time market data from multiple sources; computed technical indicators. Conducted backtesting using reinforcement learning agents and deep learning models. Designed an interactive dashboard for equity analysis with visualizations and key metrics."
+      },
+      {
+        "title": "E-Commerce Web Application",
+        "technologies": [
+          "Python",
+          "Flask",
+          "SQL",
+          "Typescript React",
+          "Docker",
+          "Paypal API",
+          "Printful API"
+        ],
+        "description": "Built a custom web application enabling users to design personalized web pages with embedded content and merchandise. Worked with clients to build solutions that fit their business needs; integrated third-party APIs for payment processing and product fulfillment to streamline business operations."
+      }
+    ]
+  }
