@@ -10,34 +10,26 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-LKLYX8GDPT');
     </script>
     
     <!-- Title & SEO -->
-    <title>Aidan Martin — Software Engineer</title>
-    <meta name="description" content="Portfolio and resume of Aidan Martin, Software Engineer. Explore projects, skills, and experience." />
+    <title>Aidan Martin — Data Scientist & Software Engineer</title>
+    <meta name="description" content="Portfolio and resume of Aidan Martin, Data Scientist & Software Engineer. Explore projects, skills, and experience." />
     <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="Aidan Martin, Software Engineer, Portfolio, Data Scientist, Projects, Resume" />
+    <meta name="keywords" content="Aidan Martin, Data Scientist, Software Engineer, Portfolio, Machine Learning, Python" />
     <meta name="author" content="Aidan Martin" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Aidan Martin Portfolio" />
 
     <!-- Favicon -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="assets/favicon.png" />
     
-    <!-- Open Graph (LinkedIn, Slack, etc.) -->
-    <meta property="og:title" content="Aidan Martin — Software Engineer" />
-    <meta property="og:description" content="Portfolio and resume of Aidan Martin, Software Engineer. Explore projects, skills, and experience." />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Aidan Martin — Data Scientist & Software Engineer" />
+    <meta property="og:description" content="Portfolio and resume of Aidan Martin, Data Scientist & Software Engineer." />
     <meta property="og:image" content="assets/profile.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://a1mart.github.io" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aidan Martin — Software Engineer" />
-    <meta name="twitter:description" content="Portfolio and resume of Aidan Martin, Software Engineer." />
-    <meta name="twitter:image" content="assets/profile.jpg" />
 
     <style>
         * {
@@ -49,15 +41,12 @@
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
-            --secondary: #64748b;
             --accent: #06b6d4;
             --background: #ffffff;
             --surface: #f8fafc;
             --text: #1e293b;
             --text-muted: #64748b;
             --border: #e2e8f0;
-            --success: #10b981;
-            --warning: #f59e0b;
         }
 
         body {
@@ -76,37 +65,19 @@
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
-            padding: 100px 0 80px;
+            padding: 80px 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-opacity="0.1" stroke-width="1"/></pattern></defs><rect width="100" height="20" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .hero .subtitle {
             font-size: 1.25rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
         }
 
@@ -131,9 +102,8 @@
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
+            border-radius: 8px;
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -164,21 +134,20 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
         }
 
         .card {
             background: white;
             border-radius: 12px;
             padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .card h3 {
@@ -208,14 +177,8 @@
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .skill-category h3 {
@@ -235,7 +198,7 @@
             background: var(--surface);
             color: var(--text);
             padding: 0.375rem 0.75rem;
-            border-radius: 20px;
+            border-radius: 6px;
             font-size: 0.875rem;
             border: 1px solid var(--border);
             transition: all 0.2s ease;
@@ -244,7 +207,6 @@
         .skill-tag:hover {
             background: var(--primary);
             color: white;
-            transform: scale(1.05);
         }
 
         .project {
@@ -252,14 +214,8 @@
             border-radius: 12px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
         }
 
         .project h3 {
@@ -295,14 +251,8 @@
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .award:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .award h3 {
@@ -320,42 +270,6 @@
 
         .award-link:hover {
             text-decoration: underline;
-        }
-
-        .languages-section {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border);
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .language-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .language-item:last-child {
-            border-bottom: none;
-        }
-
-        .language-name {
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .language-proficiency {
-            background: var(--success);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            text-transform: capitalize;
         }
 
         .loading {
@@ -394,7 +308,7 @@
                 font-size: 2rem;
             }
             
-            .cards-grid {
+            .cards-grid, .skills-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -402,23 +316,17 @@
                 flex-direction: column;
                 align-items: center;
             }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 id="name">Loading...</h1>
-                <p class="subtitle" id="title">Data Scientist & Software Engineer</p>
-                <p class="summary" id="summary">Loading...</p>
-                <div class="contact-links" id="contact-links">
-                    <!-- Contact links will be populated by JavaScript -->
-                </div>
+            <h1 id="name">Loading...</h1>
+            <p class="subtitle" id="title">Data Scientist & Software Engineer</p>
+            <p class="summary" id="summary">Loading...</p>
+            <div class="contact-links" id="contact-links">
+                <!-- Contact links will be populated by JavaScript -->
             </div>
         </div>
     </section>
@@ -471,19 +379,17 @@
     </footer>
 
     <script>
-        // Configuration - change this to load from external JSON file
         const CONFIG = {
-            loadFromFile: false, // Set to false to use embedded data
-            jsonPath: './assets/resume.json' // Path to your JSON file
+            loadFromFile: false,
+            jsonPath: './assets/resume.json'
         };
 
-        // Fallback resume data (embedded in JavaScript as backup)
         const fallbackResumeData = {
             "personal": {
                 "name": "Aidan Martin",
                 "degree": "",
-                "title": "Data Scientist",
-                "summary": "Skilled communicator and strategic problem-solver with a proven track record of bridging business and technology. Expert at engaging stakeholders to identify needs and translating those into actionable, high-impact solutions. Skilled at leveraging data analysis and technological insights to derive informed decisions. Recognized for delivering results efficiently and creating meaningful outcomes that advance organizational objectives.",
+                "title": "Data Scientist & Software Engineer",
+                "summary": "Experienced Data Scientist and Software Engineer with a proven track record of building scalable ML solutions and cloud infrastructure. Expert at translating business challenges into technical solutions that drive measurable impact.",
                 "contact": {
                     "address": "Charleston, SC 29455",
                     "email": "aidan3martin@gmail.com",
@@ -497,14 +403,13 @@
                     "location": "Remote",
                     "position": "Data Scientist",
                     "period": "2023 - PRESENT",
-                    "description": "Designed and implemented data extraction workflows and machine learning models for diverse client projects. Developed and optimized integration and deployment pipelines to ensure seamless operation of ML systems. Delivered client solutions including Azure Kubernetes Service (AKS) deployments and distributed machine learning applications. Built and maintained APIs to support robust data integration and ML services."
-                },
+                    "description": "Developed and deployed AI-powered document processing solutions for mid-market clients, specializing in accounts payable automation. Built OCR and machine learning models that process 2,000+ invoices monthly with 98% accuracy, saving clients an estimated $100K annually. Designed integration pipelines connecting AI tools with existing ERP systems and provided technical training to client finance teams. Collaborated with consulting teams to identify automation opportunities and delivered end-to-end solutions from proof-of-concept to production deployment."                },
                 {
                     "company": "Florida State University",
                     "location": "Tallahassee, FL",
                     "position": "Teaching Assistant",
                     "period": "2021 - 2022",
-                    "description": "Evaluated undergraduate assignments, research papers, and exams. Held office hours for students and suggested improvements to course content."
+                    "description": "Mentored undergraduate students and help office hours to support their learning. Evaluated assignments, proctored exams, and offered suggestions to improve course content."
                 },
                 {
                     "company": "Celtic Cottage Pub and Patio Bar",
@@ -526,11 +431,11 @@
                         "Data Science",
                         "Database Systems",
                         "Cryptography",
-                        "Network Security: Active and Passive Defenses",
-                        "Computer and Network Administration",
-                        "Data and Computer Communications",
+                        "Network Security",
+                        "Computer Administration",
+                        "Data Communications",
                         "Advanced Operating Systems",
-                        "Theory of Automata and Formal Languages"
+                        "Theory of Automata"
                     ]
                 },
                 {
@@ -547,136 +452,85 @@
                         "Theory of Computation",
                         "Programming Languages",
                         "Object-Oriented Programming",
-                        "Parallel and Distributed Programming",
+                        "Parallel Programming",
                         "Computer Architecture",
                         "Discrete Mathematics"
                     ]
                 }
             ],
             "skills": {
-                "Programming & Software Development": [
-                    "Golang",
-                    "Python",
-                    "C/C++",
-                    "Rust",
-                    "JavaScript",
-                    "TypeScript",
-                    "React",
-                    "Git",
-                    "Automated Testing (Unit & Integration)"
+                "Programming & Development": [
+                    "Python", "Golang", "JavaScript", "TypeScript", "React", "Rust",
+                    "C/C++/C#", "Git", "Unit Testing"
                 ],
-                "Data Science & Analytics": [
-                    "SQL",
-                    "NoSQL",
-                    "Spark",
-                    "Hadoop",
-                    "Kafka",
-                    "RabbitMQ",
-                    "Machine Learning",
-                    "Visualization (PowerBI, Tableau)",
-                    "Prompt Engineering"
+                "Data Science & ML": [
+                    "Deep Learning", "Reinforcement Learning", "MLOps", "Feature Engineering", "SQL", 
+                    "PostgreSQL", "Statistical Analysis", "A/B Testing"
                 ],
-                "Cloud, DevOps & Infrastructure": [
-                    "Kubernetes",
-                    "Docker",
-                    "Terraform",
-                    "AWS",
-                    "Azure",
-                    "GCP",
-                    "CI/CD",
-                    "Server Management"
+                "Cloud & Infrastructure": [
+                    "Azure", "AWS",  "Docker", "Kubernetes", "Terraform", 
+                    "CI/CD Pipelines", "REST APIs", "gRPC", "Microservices"
                 ],
-                "Systems, Networking & Architecture": [
-                    "APIs & Integrations",
-                    "Routing",
-                    "Distributed Systems",
-                    "Solution Architecture"
+                "Data Engineering & Tools": [
+                    "Spark", "Hadoop", "Kafka", "RabbitMQ", "ETL Pipelines", 
+                    "Power BI", "OCR/Document Processing", "MongoDB", "Data Warehousing"
                 ]
             },
             "awards": [
-            {
-                "title": "Academic Honors",
-                "description": "Dean's List; FSU Vires Scholarship"
-            },
-            {
-                "title": "Scholarship Recognition",
-                "description": "New Jersey State Golf Association Caddie Scholar – awarded for academic performance and leadership",
-                "link": "https://njsga.org/news/post/caddie-scholarship-success-story-spring-lakes-aidan-martin"
-            },
-            {
-                "title": "Leadership & Service",
-                "description": "Phi Gamma Delta Fundraising Award – recognized for excellence in philanthropic fundraising supporting UF Health Shands Children's Hospital"
-            }
-            ],
-            "languages": [
                 {
-                    "language": "English",
-                    "proficiency": "native"
+                    "title": "Academic Honors",
+                    "description": "Dean's List; FSU Vires Scholarship"
                 },
                 {
-                    "language": "Spanish",
-                    "proficiency": "proficient"
+                    "title": "Scholarship Recognition",
+                    "description": "New Jersey State Golf Association Caddie Scholar – awarded for academic performance and leadership",
+                    "link": "https://njsga.org/news/post/caddie-scholarship-success-story-spring-lakes-aidan-martin"
+                },
+                {
+                    "title": "Leadership & Service",
+                    "description": "Phi Gamma Delta Fundraising Award – recognized for excellence in philanthropic fundraising"
                 }
             ],
             "projects": [
                 {
-                    "title": "Accounts Payable AI / AutoExtract",
-                    "technologies": [
-                        "Python",
-                        "FastAPI",
-                        "PostgreSQL",
-                        "Docker",
-                        "Kubernetes",
-                        "Terraform"
-                    ],
-                    "description": "Developed a fully-featured invoice and document management system that processed unstructured scanned invoices and PDFs using OCR models. Implemented a human-in-the-loop review and approval workflow, validated data against external sources and ERP systems for accuracy, and automated posting of verified entries. Built scalable deployment pipelines using Azure Pipelines and Kubernetes, ensuring reliable and efficient operation across distributed environments."
+                    "title": "AI Document Processing Platform",
+                    "technologies": ["Python", "FastAPI", "React", "PostgreSQL", "Docker", "Kubernetes"],
+                    "description": "Built comprehensive invoice management system with OCR processing and human-in-the-loop workflows. Implemented data validation against ERP systems and automated posting. Deployed using Azure Pipelines and Kubernetes with high reliability."
                 },
                 {
                     "title": "Workflow Engine",
-                    "technologies": [
-                        "Golang",
-                        "PostgreSQL",
-                        "Docker",
-                        "Kubernetes"
-                    ],
-                    "description": "Built a concurrency-focused workflow engine inspired by Huginn, designed for robust and efficient task automation. Builds on the theme of AI Agents and the Actor Model to accommodate complex scenarios."
+                    "technologies": ["Golang", "PostgreSQL", "Docker", "Kubernetes"],
+                    "description": "Developed concurrent workflow engine inspired by Huginn, designed for robust task automation. Built on Actor Model architecture to handle complex automation scenarios efficiently."
                 },
                 {
-                    "title": "Emergency Medical Service (EMS) Dispatch and Deployment",
-                    "technologies": [
-                        "Python",
-                        "SQL",
-                        "Docker",
-                        "SymPy",
-                        "Open Source Routing Machine (OSRM)"
-                    ],
-                    "description": "Created a simulator to evaluate reinforcement learning policies, resource distributions, and infrastructure locations. Developed a generalized environment for shortest-path routing to real-world locations using GPS coordinates."
+                    "title": "EMS Optimization System",
+                    "technologies": ["Python", "SQL", "Docker", "SymPy", "OSRM"],
+                    "description": "Created simulation environment to optimize routing emergency medical services using reinforcement learning. Developed routing system for real-world GPS locations with performance optimization."
                 },
                 {
-                    "title": "Stock Market Prediction and Financial Analysis",
-                    "technologies": [
-                        "Python",
-                        "Charts.js"
-                    ],
-                    "description": "Aggregated and preprocessed real-time market data from multiple sources; computed technical indicators. Conducted backtesting using reinforcement learning agents and deep learning models. Designed an interactive dashboard for equity analysis with visualizations and key metrics."
+                    "title": "Financial Analysis Platform",
+                    "technologies": ["Python", "Charts.js", "Machine Learning"],
+                    "description": "Built market analysis platform with real-time data processing and technical indicators. Implemented backtesting framework for trading strategies using deep learning models."
                 },
                 {
-                    "title": "E-Commerce Web Application",
-                    "technologies": [
-                        "Python",
-                        "Flask",
-                        "SQL",
-                        "Typescript React",
-                        "Docker",
-                        "Paypal API",
-                        "Printful API"
-                    ],
-                    "description": "Built a custom web application enabling users to design personalized web pages with embedded content and merchandise. Worked with clients to build solutions that fit their business needs; integrated third-party APIs for payment processing and product fulfillment to streamline business operations."
+                    "title": "E-Commerce Platform",
+                    "technologies": ["Python", "Flask", "TypeScript", "React", "Docker", "APIs"],
+                    "description": "Developed full-stack e-commerce solution with custom design tools and integrated payment processing. Built automated fulfillment system with third-party API integrations."
                 }
             ]
         };
 
-        // Function to load JSON data from external file
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = message;
+            document.body.insertBefore(errorDiv, document.body.firstChild);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+
         async function loadResumeData() {
             if (!CONFIG.loadFromFile) {
                 return fallbackResumeData;
@@ -688,36 +542,21 @@
                     throw new Error(`Failed to load ${CONFIG.jsonPath}: ${response.statusText}`);
                 }
                 const data = await response.json();
-                console.log('Successfully loaded resume data from file');
                 return data;
             } catch (error) {
-                console.warn('Failed to load external JSON file, using fallback data:', error);
-                showError(`Could not load ${CONFIG.jsonPath}. Using embedded data instead.`);
+                console.warn('Failed to load external JSON, using fallback:', error);
+                showError(`Could not load ${CONFIG.jsonPath}. Using embedded data.`);
                 return fallbackResumeData;
             }
         }
 
-        // Function to show error messages
-        function showError(message) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'error';
-            errorDiv.textContent = message;
-            document.body.insertBefore(errorDiv, document.body.firstChild);
-            
-            // Remove error after 5 seconds
-            setTimeout(() => {
-                errorDiv.remove();
-            }, 5000);
-        }
-
-        // Function to populate the page with data
         function populatePortfolio(resumeData) {
             try {
-                // Populate hero section
-                document.getElementById('name').textContent = resumeData.personal.name + ' ' + resumeData.personal.degree;
+                // Hero section
+                document.getElementById('name').textContent = `${resumeData.personal.name} ${resumeData.personal.degree}`;
                 document.getElementById('summary').textContent = resumeData.personal.summary;
 
-                // Populate contact links
+                // Contact links
                 const contactContainer = document.getElementById('contact-links');
                 contactContainer.innerHTML = `
                     <a href="mailto:${resumeData.personal.contact.email}" class="contact-link">
@@ -729,7 +568,6 @@
                         </svg>
                         GitHub
                     </a>
-
                     <a href="${resumeData.personal.contact.linkedin}" class="contact-link" target="_blank" rel="noopener">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452H17.1v-5.569c0-1.327-.026-3.036-1.848-3.036-1.849 0-2.132 1.445-2.132 2.938v5.667H9.045V9h3.208v1.561h.045c.447-.847 1.539-1.737 3.168-1.737 3.39 0 4.016 2.231 4.016 5.134v6.494zM5.337 7.433a1.863 1.863 0 1 1 0-3.725 1.863 1.863 0 0 1 0 3.725zM6.855 20.452H3.819V9h3.036v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.727v20.546C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.273V1.727C24 .771 23.2 0 22.225 0z"/>
@@ -738,7 +576,7 @@
                     </a>
                 `;
 
-                // Populate experience
+                // Experience
                 const experienceContainer = document.getElementById('experience-container');
                 experienceContainer.innerHTML = resumeData.experience.map(exp => `
                     <div class="card">
@@ -748,7 +586,7 @@
                     </div>
                 `).join('');
 
-                // Populate skills
+                // Skills
                 const skillsContainer = document.getElementById('skills-container');
                 skillsContainer.innerHTML = Object.entries(resumeData.skills).map(([category, skills]) => `
                     <div class="skill-category">
@@ -759,7 +597,7 @@
                     </div>
                 `).join('');
 
-                // Populate projects
+                // Projects
                 const projectsContainer = document.getElementById('projects-container');
                 projectsContainer.innerHTML = resumeData.projects.map(project => `
                     <div class="project">
@@ -771,7 +609,7 @@
                     </div>
                 `).join('');
 
-                // Populate education
+                // Education
                 const educationContainer = document.getElementById('education-container');
                 educationContainer.innerHTML = resumeData.education.map(edu => `
                     <div class="card">
@@ -783,7 +621,7 @@
                     </div>
                 `).join('');
 
-                // Populate awards
+                // Awards
                 const awardsContainer = document.getElementById('awards-container');
                 awardsContainer.innerHTML = resumeData.awards.map(award => `
                     <div class="award">
@@ -792,14 +630,12 @@
                     </div>
                 `).join('');
 
-                console.log('Portfolio populated successfully');
             } catch (error) {
                 console.error('Error populating portfolio:', error);
                 showError('Error displaying portfolio data. Please check the console for details.');
             }
         }
 
-        // Initialize the portfolio when the page loads
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const resumeData = await loadResumeData();
@@ -810,7 +646,7 @@
             }
         });
 
-        // Add smooth scrolling for better UX (optional)
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -831,10 +667,10 @@
             "https://github.com/a1mart",
             "https://www.linkedin.com/in/aidan-martin333/"
         ],
-        "jobTitle": "Software Engineer",
+        "jobTitle": "Data Scientist",
         "worksFor": {
             "@type": "Organization",
-            "name": "Independent"
+            "name": "Clifton Larson Allen"
         }
         }
     </script>
