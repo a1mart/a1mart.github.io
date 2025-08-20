@@ -452,7 +452,7 @@
     <script>
         // Configuration - change this to load from external JSON file
         const CONFIG = {
-            loadFromFile: true, // Set to false to use embedded data
+            loadFromFile: false, // Set to false to use embedded data
             jsonPath: './assets/resume.json' // Path to your JSON file
         };
 
@@ -460,9 +460,9 @@
         const fallbackResumeData = {
             "personal": {
                 "name": "Aidan Martin",
-                "degree": "MSCS",
+                "degree": "",
                 "title": "Data Scientist",
-                "summary": "Skilled communicator with a proven ability to bridge the gap between business and technology. Adept at engaging with stakeholders to understand their needs and translating them into actionable solutions. Proficient in leveraging machine expertise and data analysis to derive meaningful insights and make informed, data-driven decisions. Recognized for efficient problem-solving and delivering impactful outcomes.",
+                "summary": "Skilled communicator and strategic problem-solver with a proven track record of bridging business and technology. Expert at engaging stakeholders to identify needs and translating them into actionable, high-impact solutions. Skilled in leveraging data analysis and technological insights to drive informed, data-driven decisions. Recognized for delivering results efficiently and creating meaningful outcomes that advance organizational objectives.",
                 "contact": {
                     "address": "Charleston, SC 29455",
                     "email": "aidan3martin@gmail.com",
@@ -475,7 +475,7 @@
                     "location": "Remote",
                     "position": "Data Scientist",
                     "period": "2023 - PRESENT",
-                    "description": "Designed and implemented data extraction workflows and machine learning models for diverse client projects. Developed and optimized integration and deployment pipelines, ensuring seamless operation of machine learning systems. Introduced and deployed Kubernetes and Terraform for scalable and automated infrastructure management. Delivered client solutions, including Azure Kubernetes Service (AKS) deployments and machine learning applications in distributed systems. Built and maintained APIs to support robust machine learning and data integration services."
+                    "description": "Designed and implemented data extraction workflows and machine learning models for diverse client projects. Developed and optimized integration and deployment pipelines to ensure seamless operation of ML systems. Delivered client solutions including Azure Kubernetes Service (AKS) deployments and distributed machine learning applications. Built and maintained APIs to support robust data integration and ML services."
                 },
                 {
                     "company": "Florida State University",
@@ -574,7 +574,7 @@
             "awards": [
             {
                 "title": "Academic Honors",
-                "description": "Dean's List; FSU Vires Scholarship (academic merit-based out-of-state tuition waiver)"
+                "description": "Dean's List; FSU Vires Scholarship"
             },
             {
                 "title": "Scholarship Recognition",
@@ -598,7 +598,7 @@
             ],
             "projects": [
                 {
-                    "title": "Invoice Management System/AutoExtract",
+                    "title": "Accounts Payable AI / AutoExtract",
                     "technologies": [
                         "Python",
                         "FastAPI",
@@ -607,7 +607,7 @@
                         "Kubernetes",
                         "Terraform"
                     ],
-                    "description": "Developed a comprehensive system for invoice and document management with automated data extraction and processing. Implemented scalable deployment pipelines leveraging Azure Pipelines, Kubernetes and Terraform."
+                    "description": "Developed a fully-featured invoice and document management system that processed unstructured scanned invoices and PDFs using OCR models. Implemented a human-in-the-loop review and approval workflow, validated data against external sources and ERP systems for accuracy, and automated posting of verified entries. Built scalable deployment pipelines using Azure Pipelines and Kubernetes, ensuring reliable and efficient operation across distributed environments."
                 },
                 {
                     "title": "Workflow Engine",
@@ -756,16 +756,7 @@
                 awardsContainer.innerHTML = resumeData.awards.map(award => `
                     <div class="award">
                         <h3>${award.title}</h3>
-                        <p>${award.description}${award.link ? ` <a href="${award.link}" class="award-link" target="_blank" rel="noopener">→</a>` : ''}</p>
-                    </div>
-                `).join('');
-
-                // Populate languages
-                const languagesContainer = document.getElementById('languages-container');
-                languagesContainer.innerHTML = resumeData.languages.map(lang => `
-                    <div class="language-item">
-                        <span class="language-name">${lang.language}</span>
-                        <span class="language-proficiency">${lang.proficiency}</span>
+                        <p>${award.description}${award.link ? ` <a href="${award.link}" class="award-link" target="_blank" rel="noopener">Read more →</a>` : ''}</p>
                     </div>
                 `).join('');
 
